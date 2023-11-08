@@ -16,22 +16,32 @@
     </head>
     <body>
         <header>
-           
             <div class="container flexbox">
-                
                 <div>
-                    <h1>Guess Game</h1>
+                    <input type="button" id="try-again" value="">
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li> 
+                        <li>
+                            <button id="showFormBtn" class="play-again">play again</button>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <main>
+            <div class="center">
+                <div class="container flexbox counter">
+                    <p>Guesses: 5</p>
+                </div>
+                <div class="container flexbox content">
+                    <input type="text" class="round-input">
+                </div>
+                <div class="container flexbox result">
+                    <p>My number is smaller.</p>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
 
