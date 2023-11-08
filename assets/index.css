@@ -104,7 +104,7 @@ nav ul li + li {
 }
 
 
-.round-input {
+.content {
     border: 1px solid #ccc; /* Add a border */
     border-radius: 50%; /* Set border radius to 50% for full round shape */
     padding: 10px; /* Add some padding for better appearance */
@@ -114,6 +114,10 @@ nav ul li + li {
     font-size: 70px;
     font-weight: 800;
     color: #ff6cff;
+}
+
+.content p {
+    color:#000;
 }
 
 .result {
@@ -132,6 +136,7 @@ nav ul li + li {
     font-size: 18px;
     font-weight: 600;
     border-radius: 10px;
+    margin: 10px;
     margin-top: 20px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -140,10 +145,6 @@ nav ul li + li {
 
 .button:hover {
     transform: translate(0.5px, 0.5px);
-}
-
-#restart {
-    display:none;
 }
 
 #error-name {
