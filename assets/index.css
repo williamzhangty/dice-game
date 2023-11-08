@@ -57,7 +57,7 @@ h1 {
 
 .result p {
     color:#fff;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 header div {
@@ -106,7 +106,7 @@ nav ul li + li {
 
 .content {
     border: 1px solid #ccc; /* Add a border */
-    border-radius: 50%; /* Set border radius to 50% for full round shape */
+    border-radius: 20%; /* Set border radius to 50% for full round shape */
     padding: 10px; /* Add some padding for better appearance */
     width: 200px; /* Set the width as needed */
     height: 200px;

@@ -1,6 +1,6 @@
 'use strict';
 
-const input = document.getElementById('input');
+const content = document.getElementById('content');
 const error = document.getElementById('error-name');
 const result = document.getElementById('result');
 const counter = document.getElementById('counter');
@@ -10,15 +10,47 @@ const playAgain = document.getElementById("play-again");
 const restart = document.getElementById("restart");
 
         // Add a click event listener to the button
-playAgain.addEventListener("click", function() {
-    // Reload the page when the button is clicked
-    location.reload();
-});
 
+let count = 1;
+let sum = 0;
 restart.addEventListener("click", function() {
     // Reload the page when the button is clicked
     location.reload();
 });
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+playAgain.addEventListener("click", function() {
+    if (count >= 3) {
+        playAgain.setAttribute("disabled", "true");
+        playAgain.style.backgroundColor = '#d8d8d8';
+    }
+   // alert(1);
+    //let i = 6;
+    //num = i % 3
+    ///content.innerHTML = num;
+    counter.innerHTML = 'Round:' + count;
+    let num = getRandomInt(1, 6);
+    content.innerHTML = num;
+    sum = sum + num;
+    if (count == 1) {
+        result.innerHTML = num
+    } else if (count == 3) {
+        result.innerHTML = 'Your total points is : ' + result.innerHTML+'+'+num + '=' + sum;
+    } else {
+        result.innerHTML = result.innerHTML+'+'+num ;
+    }
+    count ++;
+    
+
+});
+
+
 
 function isNumber(str) {
     let input = str.trim();
@@ -30,38 +62,5 @@ function isNumber(str) {
     return false;
 }
 
-let count = 1;
-let num = Math.floor(Math.random() * 100);
 
-let delayTimer;
 
-input.addEventListener('keyup', function() {
-    clearTimeout(delayTimer); // Clear any previous timers
-
-    delayTimer = setTimeout(function() {
-        let a = input.value;
-        
-
-        counter.innerHTML = 'Guesses:' + count;
-
-        if (isNumber(a)) {
-            error.innerHTML = '';
-            if (a > num) {
-                //alert(num);
-                result.innerHTML = 'My number is bigger.';
-            } else if (a < num){
-                //alert(num);
-
-                result.innerHTML = 'My number is smaller.';
-            } else {
-                result.innerHTML = 'I win.';
-                restart.style.display = 'block';
-            }
-            count++;
-        } else {
-            error.innerHTML = 'Please input a valid number';
-            result.innerHTML = '';
-        }
-        
-    }, 1000); // 1000 milliseconds (1 seconds)
-});
