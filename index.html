@@ -24,7 +24,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <button id="showFormBtn" class="play-again">play again</button>
+                            <button id="play-again" class="button">play again</button>
                         </li>
                     </ul>
                 </nav>
@@ -33,14 +33,17 @@
         <main>
             <div class="center">
                 <div class="container flexbox counter">
-                    <p>Guesses: 5</p>
+                    <p id="counter">Guess: 0</p>
                 </div>
                 <div class="container flexbox content">
-                    <input type="text" class="round-input" id="input">
+                    <input type="text" class="round-input" id="input" maxlength="2">
                 </div>
                 <p id="error-name" class="flexbox"></p>
                 <div class="container flexbox result">
                     <p id="result"></p>
+                </div>
+                <div class="container flexbox">
+                    <button id="restart" class="button">Restart</button>
                 </div>
             </div>
         </main>

@@ -3,6 +3,22 @@
 const input = document.getElementById('input');
 const error = document.getElementById('error-name');
 const result = document.getElementById('result');
+const counter = document.getElementById('counter');
+
+const playAgain = document.getElementById("play-again");
+
+const restart = document.getElementById("restart");
+
+        // Add a click event listener to the button
+playAgain.addEventListener("click", function() {
+    // Reload the page when the button is clicked
+    location.reload();
+});
+
+restart.addEventListener("click", function() {
+    // Reload the page when the button is clicked
+    location.reload();
+});
 
 function isNumber(str) {
     let input = str.trim();
@@ -14,30 +30,38 @@ function isNumber(str) {
     return false;
 }
 
-let count = 0;
+let count = 1;
+let num = Math.floor(Math.random() * 100);
 
-input.addEventListener('keyup', function(){
+let delayTimer;
 
-    let a = input.value;
-    let num = Math.floor(Math.random() * 10);
+input.addEventListener('keyup', function() {
+    clearTimeout(delayTimer); // Clear any previous timers
 
-    if (isNumber(a)) {
-        error.innerHTML = '';
-        if (a > num) {
-            //alert(num);
-            result.innerHTML = 'My number is bigger.';
-        } else {
-            //alert(num);
-
-            result.innerHTML = 'My number is smaller.';
-        }
-     
-        count = 0;
-    } else {
-        //alert(a);
-        error.innerHTML = 'Please input an invalid number';
+    delayTimer = setTimeout(function() {
+        let a = input.value;
         
-    }
-    count++;
-//console.log(isNumber(a), isNumber(b));
+
+        counter.innerHTML = 'Guesses:' + count;
+
+        if (isNumber(a)) {
+            error.innerHTML = '';
+            if (a > num) {
+                //alert(num);
+                result.innerHTML = 'My number is bigger.';
+            } else if (a < num){
+                //alert(num);
+
+                result.innerHTML = 'My number is smaller.';
+            } else {
+                result.innerHTML = 'I win.';
+                restart.style.display = 'block';
+            }
+            count++;
+        } else {
+            error.innerHTML = 'Please input a valid number';
+            result.innerHTML = '';
+        }
+        
+    }, 1000); // 1000 milliseconds (1 seconds)
 });
