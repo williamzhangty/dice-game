@@ -12,24 +12,13 @@
 body {
     font-family: "Nunito Sans", "Open Sans", Arial, sans-serif;
     background-color: #000;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
     width: min(100% - 30px, 1080px);
     margin-inline:auto;
-}
-
-header {
-    overflow: hidden;
-}
-
-h1 {
-    font-size: 18px;
-    font-weight: 600;
-    color:#000;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    line-height: 60px;
 }
 
 .flexbox {
@@ -39,7 +28,7 @@ h1 {
 }
 
 .counter {
-    margin-top: 120px;
+    margin-top: 50px;
 }
 
 .counter p{
@@ -85,6 +74,8 @@ h1 {
     height: 50px;
     border-radius: 10px;
     margin-top: 20px;
+    display: block;
+    text-align: center;
 }
 
 .button {

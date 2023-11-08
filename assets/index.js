@@ -33,36 +33,13 @@ playAgain.addEventListener("click", function() {
     let num = getRandomInt(1, 6);
 
     //show different dice pic according to the random number
-    if (num == 1) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/1.png') no-repeat center";
-        
-    } else  if (num == 2) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/2.png') no-repeat center";
-        
-    } else  if (num == 3) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/3.png') no-repeat center";
-        
-    } else  if (num == 4) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/4.png') no-repeat center";
-        
-    } else  if (num == 5) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/5.png') no-repeat center";
-        
-    } else  if (num == 6) {
-        
-        content1.style.background = "rgb(0 0 0 / 0.1) url('./assets/img/6.png') no-repeat center";
-    } 
+    content1.style.background = `rgb(0 0 0 / 0.1) url('./assets/img/${num}.png') no-repeat center`;
 
     sum = sum + num;
     if (count == 1) {
         result.innerHTML = num
     } else if (count == 3) {
-        result.innerHTML = 'Your total points are : ' + result.innerHTML+'+'+num + '=' + sum;
+        result.innerHTML = 'Your total points are' + '<br>' + result.innerHTML+'+'+num + '=' + sum;
     } else {
         result.innerHTML = result.innerHTML+'+'+num ;
     }
